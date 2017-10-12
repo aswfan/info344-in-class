@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"info344-in-class/zipsvr/models"
 )
 
 func main() {

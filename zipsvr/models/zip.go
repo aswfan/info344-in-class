@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"io"
 	"os"
+
+	
 )
 
 type Zip struct {
@@ -20,7 +22,7 @@ type ZipIndex map[string]ZipSlice
 func LoadZip(fileName string) (ZipSlice, error) {
 	f, err := os.Open(fileName)
 	if err != nil {
-		return nil.fmt.Errorrf("error opening file: %v".err)
+		return nil, fmt.Errorf("error opening file: %v", err)
 	}
 
 	reader := csv.NewReader(f)
@@ -29,11 +31,11 @@ func LoadZip(fileName string) (ZipSlice, error) {
 		return nil, fmt.Errorf("error reading header row: %v", err)
 	}
 
-	zip := make(ZipSlice, 0, 43000)
+	zips := make(ZipSlice, 0, 43000)
 	for {
 		fields, err := reader.Read()
 		if err == io.EOF {
-			return zip, nil
+			return zips, nil
 		}
 
 		if err != nil {
@@ -42,7 +44,7 @@ func LoadZip(fileName string) (ZipSlice, error) {
 
 		z := &Zip{
 			Code:  fields[0],
-			City:  fileds[3],
+			City:  fields[3],
 			State: fields[6],
 		}
 		zips = append(zips, z)
