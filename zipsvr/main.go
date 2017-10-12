@@ -2,7 +2,7 @@ package main
 
 import (
 	"log"
-	"info344-in-class/zipsvr/models"
+	"aswfan/info344-in-class/zipsvr/models"
 )
 
 func main() {

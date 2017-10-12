@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"io"
 	"os"
-
-	
 )
 
 type Zip struct {
