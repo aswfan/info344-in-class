@@ -1,4 +1,4 @@
-go_import_path: github.com/aswfan/info344-in-class/zipsvr/models
+go_import_path: github.com/aswfan/info344-in-class/
 language: go
 go:
   - 1.x
