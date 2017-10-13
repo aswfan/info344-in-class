@@ -2,6 +2,3 @@ go_import_path: github.com/aswfan/info344-in-class/
 language: go
 go:
   - 1.x
-  - 1.6
-  - 1.7.x
-  - master
