@@ -2,11 +2,12 @@ package main
 
 import (
 	"log"
-	"aswfan/info344-in-class/zipsvr/models"
+	"github.com/aswfan/info344-in-class/zipsvr/models"
+	"strings"
 )
 
 func main() {
-	zips, err := models.LoadZips("zip.csv")
+	zips, err := models.LoadZip("zip.csv")
 	if err != nil {
 		log.Fatal("error loading zips: %v", err)
 	}
@@ -14,7 +15,7 @@ func main() {
 
 	cityIndex := models.ZipIndex{}
 	for _, z := range zips {
-		cityLower := string.ToLower(z.City)
+		cityLower := strings.ToLower(z.City)
 		cityIndex[cityLower] = append(cityIndex[cityLower], z)
 	}
 
